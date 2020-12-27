@@ -13,4 +13,6 @@ RUN apt-get install -y \
 	&& apt-get install -y /tmp/teams.deb \
 	&& rm /tmp/teams.deb
 
+COPY xdg-open /usr/local/bin/
+
 CMD /usr/share/teams/teams
