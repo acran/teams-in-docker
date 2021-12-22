@@ -19,7 +19,7 @@ fi
 # read loop for opening urls with xdg
 while [ -p "$CONTAINER_HOME/.xdg.sock" ]; do read url < "$CONTAINER_HOME/.xdg.sock"; xdg-open "$url"; done &
 
-x11docker --pulseaudio --webcam --hostdisplay --clipboard --gpu --env LANG --home --name teams -- teams /usr/share/teams/teams --disable-namespace-sandbox --disable-setuid-sandbox "$@"
+x11docker --pulseaudio --webcam --hostdisplay --clipboard --gpu --env LANG --home="$CONTAINER_HOME" --name teams -- teams /usr/share/teams/teams --disable-namespace-sandbox --disable-setuid-sandbox "$@"
 
 # cleanup xdg socket
 kill %1 # kill xdg-open loop
