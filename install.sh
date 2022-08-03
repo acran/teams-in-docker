@@ -3,9 +3,10 @@
 set -e
 
 PROJECT_DIR="$(dirname "$0")"
+TEAMS_VERSION=$(curl -I --silent "https://teams.microsoft.com/downloads/desktopurl?env=production&plat=linux&arch=x64&download=true&linuxArchiveType=deb" | grep "location:" | sed -e 's/.*teams_//;s/_amd64.deb//;s/\r//')
 
 echo "building teams image..."
-docker build -t teams "$PROJECT_DIR"
+docker build -t teams:${TEAMS_VERSION} "$PROJECT_DIR"
 
 echo "copy teams to ~/bin/"
 cp "$PROJECT_DIR/teams.sh" ~/bin/teams
