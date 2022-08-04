@@ -30,6 +30,15 @@ The following functionality was verified to work:
     * copy the start script [`teams.sh`](./teams.sh) to your `~/bin/`
     * install `teams.desktop` and the icon locally for desktop integration
 
+### Updating
+
+You should regularly rebuild the `docker` image to get the latest version.
+You can rebuild it with:
+
+~~~sh
+docker build --pull -t teams .
+~~~
+
 ## Limitations
 
 Since the container has its own filesystem it can not access all files on your
