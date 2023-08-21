@@ -4,6 +4,14 @@ This is a small wrapper to run the official Microsoft Teams for Linux client in
 a `docker` container on your Linux desktop using
 [`x11docker`](https://github.com/mviereck/x11docker).
 
+# Status of this project
+
+Since Microsoft discontinued the official Teams for Linux client in favor of
+its Progressive Web App this project is now obsolete and only archived here for
+reference.
+
+See [#9](https://github.com/acran/teams-in-docker/issues/9) for details.
+
 ## Features
 
 This wrapper should provide a seemless desktop integration and work (mostly) as
